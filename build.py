@@ -282,14 +282,14 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
       <p class="eyebrow">Pasteles para ocasiones especiales</p>
       <h2>Para cada momento importante</h2>
     </div>
-    <div class="grid two-on-phone cols-4">
-      <div class="card">{photo("Cumpleaños", "t1")}<h3>Cumpleaños</h3></div>
+    <div class="grid two-on-phone cols-4 occasions">
+      <div class="card"><img class="photo-img" src="img/pastel-beisbol.jpg" alt="Pastel de cumpleaños con tema de béisbol" width="800" height="1000" loading="lazy"><h3>Cumpleaños</h3></div>
       <div class="card">{photo("Aniversarios", "t3")}<h3>Aniversarios</h3></div>
       <div class="card">{photo("Graduaciones", "t2")}<h3>Graduaciones</h3></div>
       <div class="card">{photo("Bautizos", "t4")}<h3>Bautizos</h3></div>
       <div class="card">{photo("Baby showers", "t1")}<h3>Baby showers y revelaciones</h3></div>
-      <div class="card">{photo("Niños", "t2")}<h3>Niños</h3></div>
-      <div class="card">{photo("Celebraciones", "t3")}<h3>Celebraciones especiales</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-pato.jpg" alt="Pastel infantil con personaje de pato" width="800" height="1000" loading="lazy"><h3>Niños</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-casita-bosque.jpg" alt="Pastel de casita en el bosque con musgo y hongos" width="800" height="1000" loading="lazy"><h3>Celebraciones especiales</h3></div>
       <a class="card" href="eventos.html#cotizar">{photo("Bodas", "t4")}<h3>Bodas</h3><span class="more">Cotizar boda →</span></a>
     </div>
     <div class="actions" style="margin-top:2rem">{wa_btn("Pedir pastel para mi ocasión", "Hola Cupcakes Garden, quiero un pastel para una ocasión especial.")}</div>

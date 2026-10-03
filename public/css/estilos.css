@@ -219,3 +219,14 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 860px) { .photo-img.portrait { max-width: 26rem; margin-inline: auto; } }
 /* Ocasiones: todas las fotos del mismo tamaño (4:5) */
 .occasions .photo, .occasions .photo-img { aspect-ratio: 4 / 5; }
+/* Hover sutil en las tarjetas de pasteles: la foto se eleva un poco y el título toma el tono rose gold */
+.occasions .card .photo-img, .occasions .card .photo { transition: transform .35s ease, box-shadow .35s ease; }
+.occasions .card h3 { transition: color .25s ease; }
+@media (hover: hover) {
+  .occasions .card:hover .photo-img, .occasions .card:hover .photo { transform: translateY(-4px); box-shadow: 0 12px 24px -12px rgb(46 51 36 / .35); }
+  .occasions .card:hover h3 { color: var(--rose); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .occasions .card .photo-img, .occasions .card .photo { transition: none; }
+  .occasions .card:hover .photo-img, .occasions .card:hover .photo { transform: none; }
+}

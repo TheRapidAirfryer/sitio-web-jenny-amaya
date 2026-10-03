@@ -1,10 +1,10 @@
 /* Cupcakes Garden: estilos del sitio
-   Paleta de transición (brief, sección 14): logo en rose gold; base marfil, verdes Sablé y dorado mate.
+   Fondos blancos (pedido del cliente, como la referencia); logo en rose gold; acentos verdes Sablé y dorado mate.
    Layout: sitio de varias páginas, menú fijo, bloques editoriales a lo ancho con contenido a 74rem. */
 :root {
-  --bg: #F4EEE3;          /* marfil */
-  --surface: #FBF8F2;
-  --tint: #ECE4D4;
+  --bg: #FFFFFF;          /* blanco, como la referencia */
+  --surface: #FAF9F7;
+  --tint: #F5F3EF;
   --fg: #2E3324;
   --muted: #676B57;
   --green: #4A5923;       /* verde principal Sablé */
@@ -13,7 +13,7 @@
   --gold: #B08A3C;        /* dorado mate */
   --rose: #A9665D;        /* rose gold para acentos de texto */
   --on-green: #FBF8F2;
-  --line: #DCD3C1;
+  --line: #E9E6E0;
   --wa: #1E8E50;
   --display: "Alice", Georgia, "Times New Roman", serif;
   --script: "Great Vibes", "Snell Roundhand", cursive;
@@ -125,12 +125,9 @@ a.card:hover h3 { color: var(--rose); }
 .facts dt { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
 .facts dd { margin: 0; }
 
-.band { background: var(--green); color: var(--on-green); }
+.band { background: var(--bg); border-block: 1px solid var(--line); }
 .band .grid > div { display: grid; gap: .8rem; justify-items: start; }
-.band p { opacity: .9; }
-.band .eyebrow { color: var(--on-green); opacity: .8; }
-.band .btn { border-color: var(--on-green); color: var(--on-green); }
-.band .btn.solid { background: var(--on-green); color: var(--green); }
+.band p { color: var(--muted); }
 
 /* Armador de cupcakes */
 .builder { display: grid; gap: 1.2rem; }
@@ -170,9 +167,7 @@ summary { cursor: pointer; }
 details p { color: var(--muted); margin-top: .6rem; }
 
 /* Pie */
-footer { background: var(--deep); color: var(--bg); padding-block: 3.5rem 6rem; }
-:root[data-theme="dark"] footer { background: var(--surface); color: var(--fg); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) footer { background: var(--surface); color: var(--fg); } }
+footer { background: var(--surface); color: var(--fg); border-top: 1px solid var(--line); padding-block: 3.5rem 6rem; }
 footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
 footer .sello { width: 7rem; }
 footer .tagline { letter-spacing: .2em; text-transform: uppercase; font-size: .78rem; margin-top: 1rem; opacity: .8; }

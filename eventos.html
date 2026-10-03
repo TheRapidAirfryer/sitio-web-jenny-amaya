@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eventos · Cupcakes Garden</title>
+<meta name="description" content="Propuestas dulces para bodas, cumpleaños, bautizos, graduaciones y eventos empresariales.">
+<link rel="icon" href="img/sello.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alice&family=Great+Vibes&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.1-.2Z"/></symbol>
+</svg>
+<div class="notice">Pastelería de diseño en Tegucigalpa · Desde 2013</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Cupcakes Garden by Jenny Amaya" width="900" height="431"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <ul><li><a href="index.html">Inicio</a></li><li><a href="pasteles.html">Pasteles</a></li><li><a href="galletas.html">Galletas</a></li><li><a href="cupcakes.html">Cupcakes</a></li><li><a href="postres.html">Postres</a></li><li><a href="corporativo.html">Corporativo</a></li><li><a href="eventos.html" aria-current="page">Eventos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+      <a class="btn solid" href="contacto.html#cotizar">Cotizar</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="script">Eventos</p>
+    <h1>Creamos propuestas dulces para momentos que merecen ser recordados</h1>
+    <p class="lead">Pasteles, cupcakes, cookies, galletas decoradas, macarons, postres, mesas de postres y propuestas personalizadas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Celebramos contigo</p>
+      <h2>Tipos de evento</h2>
+    </div>
+    <ul class="chips"><li>Bodas</li><li>Cumpleaños</li><li>Bautizos</li><li>Baby showers</li><li>Graduaciones</li><li>Eventos empresariales</li><li>Lanzamientos</li><li>Celebraciones privadas</li><li>Mesas de postres</li></ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap grid cols-2">
+    <div class="card boxed"><div class="photo t1"><span>Mesa dulce</span></div><p class="eyebrow">Mesas dulces</p><h3>Una mesa a la medida de tu evento</h3><p>Combinamos pasteles, cupcakes, galletas y postres con la temática de tu celebración.</p></div>
+    <div class="card boxed"><div class="photo t3"><span>Coffee & Bakery Experience</span></div><p class="eyebrow">Coffee &amp; Bakery Experience</p><h3>Nuestro carrito de café y repostería</h3><p>Una experiencia de café y bakery para que tus invitados disfruten en el momento.</p></div>
+  </div>
+</section>
+
+<section class="tint" id="cotizar">
+  <div class="wrap quote">
+    <div class="intro">
+      <p class="script">Cotiza</p>
+      <h2>Cuéntanos sobre tu evento</h2>
+      <p class="muted">Completa el formulario y preparamos una propuesta para ti.</p>
+    </div>
+    <form class="form" data-title="Solicitud de cotización de evento" novalidate>
+  <label for="ev-nombre">Nombre<input id="ev-nombre" name="ev-nombre" type="text" required></label>
+  <label for="ev-whatsapp">WhatsApp<input id="ev-whatsapp" name="ev-whatsapp" type="tel" required></label>
+  <label for="ev-correo">Correo<input id="ev-correo" name="ev-correo" type="email"></label>
+  <label for="ev-fecha">Fecha<input id="ev-fecha" name="ev-fecha" type="date" required></label>
+  <label for="ev-tipo">Tipo de evento<select id="ev-tipo" name="ev-tipo" required><option value="">Selecciona</option><option>Boda</option><option>Cumpleaños</option><option>Bautizo</option><option>Baby shower</option><option>Graduación</option><option>Evento empresarial</option><option>Lanzamiento</option><option>Celebración privada</option><option>Otro</option></select></label>
+  <label for="ev-lugar">Lugar<input id="ev-lugar" name="ev-lugar" type="text"></label>
+  <label for="ev-invitados">Número de invitados<input id="ev-invitados" name="ev-invitados" type="number"></label>
+  <label for="ev-presupuesto">Presupuesto aproximado<input id="ev-presupuesto" name="ev-presupuesto" type="text"></label>
+  <label class="full" for="ev-productos">Productos que necesita<input id="ev-productos" name="ev-productos" type="text"><span class="hint">Pasteles, cupcakes, galletas decoradas, macarons, postres, mesa de postres…</span></label>
+  <label class="full" for="ev-comentarios">Comentarios<textarea id="ev-comentarios" name="ev-comentarios"></textarea><span class="hint">Si tienes fotos de inspiración, envíalas en el chat de WhatsApp.</span></label>
+  <button class="btn solid full" type="submit">Enviar solicitud</button>
+  <p class="form-note" role="status" hidden></p>
+</form>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="sello" src="img/sello.png" alt="Sello de Cupcakes Garden by Jenny Amaya" width="500" height="501">
+      <p class="tagline">Pastelería de diseño · Diseño. Sabor. Detalle.</p>
+    </div>
+    <div>
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="pasteles.html">Pasteles</a></li>
+        <li><a href="galletas.html">Galletas</a></li>
+        <li><a href="cupcakes.html">Cupcakes</a></li>
+        <li><a href="postres.html">Postres</a></li>
+        <li><a href="corporativo.html">Corporativo</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/cupcakesgardenhn/">Instagram</a></li>
+        <li><a href="https://www.facebook.com/search/top?q=Cupcakes%20Garden">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@cupcakes.garden.h">TikTok</a></li>
+        <li><a data-wa="Hola Cupcakes Garden" href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 Cupcakes Garden. Tegucigalpa, Honduras.</span>
+      <span><a href="legal.html#terminos">Términos y condiciones</a> · <a href="legal.html#privacidad">Política de privacidad</a></span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" data-wa="Hola Cupcakes Garden, quiero hacer un pedido." href="#" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa-icon"/></svg></a>
+<script src="js/sitio.js"></script>
+</body>
+</html>

@@ -2,344 +2,145 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jenny Amaya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cupcakes Garden</title>
+<meta name="description" content="Cupcakes Garden: pastelería de diseño en Tegucigalpa para celebrar, regalar y compartir.">
+<link rel="icon" href="img/sello.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap">
-<style>
-/* Layout: tienda tipo catálogo de una página; barra de aviso, menú fijo, bloques a lo ancho con contenido a 72rem, botón flotante de WhatsApp */
-:root {
-  --bg: #FFF9F9;
-  --surface: #FFFFFF;
-  --blush: #F6DCDC;
-  --fg: #3A2228;
-  --muted: #7A5F64;
-  --accent: #9E3D5A;
-  --line: #EED9DB;
-  --wa: #1F8F55;
-  --display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1B1315; --surface: #24191C; --blush: #3A2629; --fg: #F5E8EA; --muted: #C2A8AD;
-    --accent: #F0A3B8; --line: #3B2B2E; --wa: #3CC07B; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #1B1315; --surface: #24191C; --blush: #3A2629; --fg: #F5E8EA; --muted: #C2A8AD;
-  --accent: #F0A3B8; --line: #3B2B2E; --wa: #3CC07B; color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.03rem/1.6 var(--body); }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.wrap { max-width: 72rem; margin: 0 auto; padding-inline: 1.25rem; }
-h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; line-height: 1.15; }
-h1 { font-size: clamp(2.5rem, 7vw, 4.4rem); }
-h2 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); }
-h3 { font-size: 1.25rem; }
-p { margin: 0; max-width: 62ch; }
-.eyebrow { font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin: 0 0 .6rem; }
-
-.notice { background: var(--accent); color: var(--bg); text-align: center; font-size: .85rem; font-weight: 600; padding-block: .5rem; padding-inline: 1rem; letter-spacing: .02em; }
-
-header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; padding-block: .8rem; flex-wrap: wrap; }
-.brand { text-decoration: none; color: var(--fg); display: grid; line-height: 1; }
-.brand b { font: 600 1.6rem/1 var(--display); letter-spacing: .01em; }
-.brand small { font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-top: .3rem; }
-nav ul { list-style: none; display: flex; gap: .4rem 1.2rem; margin: 0; padding: 0; flex-wrap: wrap; }
-nav a { color: var(--fg); text-decoration: none; font-size: .92rem; font-weight: 600; }
-nav a:hover { color: var(--accent); }
-
-.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.3rem; border-radius: 999px; font: 700 .92rem var(--body); text-decoration: none; border: 1.5px solid var(--accent); color: var(--accent); background: transparent; cursor: pointer; }
-.btn.solid { background: var(--accent); color: var(--bg); }
-.btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
-.btn svg { width: 1.1em; height: 1.1em; fill: currentColor; flex: none; }
-
-section { padding-block: 4rem; }
-.section-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-
-/* Foto de ejemplo: bloque de color con etiqueta, se reemplaza por imagen real */
-.photo { position: relative; aspect-ratio: 1; max-width: 100%; border-radius: .9rem; overflow: hidden; display: grid; place-items: end start; padding: .8rem; background: var(--tone, var(--blush)); }
-.photo span { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--fg); background: color-mix(in srgb, var(--surface) 80%, transparent); padding: .25rem .55rem; border-radius: 999px; }
-.t1 { --tone: linear-gradient(150deg, #F7C9D4, #F3E3E8); }
-.t2 { --tone: linear-gradient(150deg, #CDE3F0, #EEF5F9); }
-.t3 { --tone: linear-gradient(150deg, #F3DDBB, #FAF0E1); }
-.t4 { --tone: linear-gradient(150deg, #D9D2F0, #F0EDF9); }
-.t5 { --tone: linear-gradient(150deg, #CFE8D6, #EEF7F0); }
-.t6 { --tone: linear-gradient(150deg, #E7C4B5, #F6E9E3); }
-
-.hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
-.hero .lead { font-size: 1.15rem; color: var(--muted); margin-top: 1.1rem; }
-.hero .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.8rem; }
-.hero .photo { aspect-ratio: 4 / 5; border-radius: 12rem 12rem 1rem 1rem; }
-.badges { display: flex; gap: .5rem 1.5rem; flex-wrap: wrap; margin-top: 2rem; color: var(--muted); font-size: .88rem; font-weight: 600; }
-
-.cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-.cat { text-decoration: none; color: var(--fg); display: grid; gap: .6rem; }
-.cat strong { font-family: var(--display); font-weight: 500; font-size: 1.15rem; }
-.cat:hover strong { color: var(--accent); }
-
-.alt { background: var(--blush); }
-.feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-.feature .text { display: grid; gap: 1rem; justify-items: start; min-width: 0; }
-.feature .photo { aspect-ratio: 5 / 4; }
-
-.products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-.product { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: .75rem; display: grid; gap: .5rem; grid-template-rows: auto auto auto 1fr; min-width: 0; }
-.product h3 { font-size: 1.08rem; margin-top: .3rem; }
-.product .price { color: var(--muted); font-size: .9rem; }
-.product .btn { justify-self: start; align-self: end; margin-top: .4rem; padding: .55rem 1rem; font-size: .85rem; }
-
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; counter-reset: paso; list-style: none; padding: 0; margin: 0; }
-.steps li { counter-increment: paso; display: grid; gap: .4rem; }
-.steps li::before { content: counter(paso); font: 500 2.4rem/1 var(--display); color: var(--accent); }
-.steps p { color: var(--muted); }
-
-.about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: center; }
-.about .photo { aspect-ratio: 4 / 5; }
-.about .text { display: grid; gap: 1rem; min-width: 0; }
-
-.faq { display: grid; gap: .6rem; max-width: 48rem; }
-details { background: var(--surface); border: 1px solid var(--line); border-radius: .75rem; padding: 1rem 1.2rem; }
-summary { font-weight: 700; cursor: pointer; }
-details p { color: var(--muted); margin-top: .6rem; }
-
-footer { background: var(--fg); color: var(--bg); padding-block: 3rem 6rem; }
-footer .wrap { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
-footer h4 { margin: 0 0 .7rem; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
-footer a { color: var(--bg); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-footer .brand b { color: var(--bg); }
-footer p { opacity: .8; margin-top: .8rem; font-size: .92rem; }
-.legal { grid-column: 1 / -1; border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent); padding-top: 1.2rem; font-size: .82rem; opacity: .7; }
-
-.wa-float { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); z-index: 30; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 6px 20px rgb(0 0 0 / .25); }
-.wa-float svg { width: 1.9rem; height: 1.9rem; fill: currentColor; }
-
-@media (max-width: 900px) {
-  .cats, .products { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 720px) {
-  .hero .wrap, .feature, .about { grid-template-columns: 1fr; gap: 2rem; }
-  .hero .photo { max-width: 20rem; }
-  .steps { grid-template-columns: 1fr; }
-  footer .wrap { grid-template-columns: 1fr; }
-  section { padding-block: 3rem; }
-  .feature.reverse .photo { order: -1; }
-}
-@media (max-width: 420px) {
-  .cats, .products { grid-template-columns: 1fr 1fr; gap: .8rem; }
-  .product .btn { padding: .5rem .8rem; font-size: .8rem; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alice&family=Great+Vibes&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="wa-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.1-.2Z"/></symbol>
 </svg>
-
-<div class="notice">Pedidos por WhatsApp · Hecho a mano y por encargo</div>
-
+<div class="notice">Pastelería de diseño en Tegucigalpa · Desde 2013</div>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#inicio"><b>Jenny Amaya</b><small>Repostería artesanal</small></a>
-    <nav aria-label="Principal">
-      <ul>
-        <li><a href="#pasteles">Pasteles</a></li>
-        <li><a href="#regalos">Regalos</a></li>
-        <li><a href="#bodas">Bodas</a></li>
-        <li><a href="#eventos">Eventos y empresas</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#preguntas">Preguntas</a></li>
-      </ul>
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Cupcakes Garden by Jenny Amaya" width="900" height="431"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <ul><li><a href="index.html" aria-current="page">Inicio</a></li><li><a href="pasteles.html">Pasteles</a></li><li><a href="galletas.html">Galletas</a></li><li><a href="cupcakes.html">Cupcakes</a></li><li><a href="postres.html">Postres</a></li><li><a href="corporativo.html">Corporativo</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+      <a class="btn solid" href="contacto.html#cotizar">Cotizar</a>
     </nav>
   </div>
 </header>
+<main>
 
-<main id="inicio">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Pasteles para celebrar</p>
-        <h1>¡Es hora de pastel!</h1>
-        <p class="lead">Pasteles, cupcakes, galletas y postres hechos a mano para cumpleaños, bodas y cada ocasión especial. Elige tu favorito y haz tu pedido por WhatsApp.</p>
-        <div class="actions">
-          <a class="btn wa" data-wa="Hola Jenny, quiero hacer un pedido." href="#"><svg><use href="#wa-icon"/></svg>Pide por WhatsApp</a>
-          <a class="btn" href="#pasteles">Ver pasteles</a>
-        </div>
-        <div class="badges"><span>Hecho a mano</span><span>Diseños personalizados</span><span>Entrega local</span></div>
-      </div>
-      <div class="photo t1"><span>Foto principal</span></div>
-    </div>
-  </section>
-
-  <section id="pasteles">
-    <div class="wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">Colecciones</p><h2>Pasteles para cada ocasión</h2></div>
-      </div>
-      <div class="cats">
-        <a class="cat" href="#mas-pedidos"><div class="photo t1"><span>Foto</span></div><strong>Cumpleaños</strong></a>
-        <a class="cat" href="#mas-pedidos"><div class="photo t2"><span>Foto</span></div><strong>Infantiles</strong></a>
-        <a class="cat" href="#mas-pedidos"><div class="photo t3"><span>Foto</span></div><strong>Aniversarios</strong></a>
-        <a class="cat" href="#mas-pedidos"><div class="photo t4"><span>Foto</span></div><strong>Baby shower y revelación</strong></a>
-        <a class="cat" href="#mas-pedidos"><div class="photo t5"><span>Foto</span></div><strong>Cupcakes</strong></a>
-        <a class="cat" href="#regalos"><div class="photo t6"><span>Foto</span></div><strong>Galletas</strong></a>
-        <a class="cat" href="#regalos"><div class="photo t1"><span>Foto</span></div><strong>Macarons</strong></a>
-        <a class="cat" href="#bodas"><div class="photo t3"><span>Foto</span></div><strong>Bodas</strong></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="text">
+      <img class="logo-hero" src="img/logo.png" alt="Cupcakes Garden by Jenny Amaya" width="900" height="431">
+      <h1>Pastelería para celebrar, regalar y compartir.</h1>
+      <p class="lead">Desde pasteles diseñados para momentos especiales hasta galletas, cupcakes y postres que combinan diseño, sabor y atención al detalle.</p>
+      <div class="actions">
+        <a class="btn solid" href="#lineas">Ver productos</a>
+        <a class="btn" href="contacto.html#cotizar">Cotizar</a>
       </div>
     </div>
-  </section>
+    <div class="photo t1"><span>Fotografía principal</span></div>
+  </div>
+</section>
 
-  <section id="mas-pedidos" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">Favoritos</p><h2>Lo más pedido</h2></div>
-      </div>
-      <div class="products" id="products"></div>
+<section id="lineas" class="alt">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="script">Nuestras líneas</p>
+      <h2>Todo lo que hacemos</h2>
     </div>
-  </section>
+    <div class="grid"><a class="card" href="pasteles.html"><div class="photo t1"><span>Pasteles</span></div><h3>Pasteles</h3><p>De diseño, para cada ocasión, clásicos y personalizados. También nuestra cake tasting box.</p><span class="more">Ver pasteles →</span></a><a class="card" href="galletas.html"><div class="photo t3"><span>Galletas</span></div><h3>Galletas</h3><p>Estilo New York, gourmand, americanas, linzer, alfajores, cottage y gluten free.</p><span class="more">Ver galletas →</span></a><a class="card" href="cupcakes.html"><div class="photo t2"><span>Cupcakes</span></div><h3>Cupcakes</h3><p>Clásicos pick your color, gourmet y personalizados.</p><span class="more">Ver cupcakes →</span></a><a class="card" href="postres.html"><div class="photo t4"><span>Postres</span></div><h3>Postres</h3><p>Spooning collection: tiramisú, cheesecakes y tres leches, más postres individuales.</p><span class="more">Ver postres →</span></a><a class="card" href="corporativo.html"><div class="photo t3"><span>Corporativo</span></div><h3>Corporativo</h3><p>Detalles y regalos para empresas, con cajas y kits listos para comprar.</p><span class="more">Ver corporativo →</span></a><a class="card" href="eventos.html"><div class="photo t2"><span>Eventos</span></div><h3>Eventos</h3><p>Mesas dulces, Coffee &amp; Bakery Experience y propuestas para tu celebración.</p><span class="more">Ver eventos →</span></a></div>
+  </div>
+</section>
 
-  <section id="regalos">
-    <div class="wrap feature">
-      <div class="photo t6"><span>Foto de regalos</span></div>
-      <div class="text">
-        <p class="eyebrow">Regalos dulces</p>
-        <h2>Un detalle que se disfruta</h2>
-        <p>Cajas de galletas, brownies y macarons listas para regalar. Ideales para cumpleaños, agradecimientos o solo porque sí.</p>
-        <a class="btn wa" data-wa="Hola Jenny, me interesa una caja de regalo." href="#"><svg><use href="#wa-icon"/></svg>Pedir un regalo</a>
-      </div>
+<section>
+  <div class="wrap feature">
+    <div class="photo t3"><span>Cake tasting box</span></div>
+    <div class="text">
+      <p class="eyebrow">Cake tasting box</p>
+      <h2>Descubre nuestros sabores antes de elegir tu pastel</h2>
+      <p>Una selección de 5 porciones de nuestros pasteles para que pruebes, descubras tus favoritos y elijas con seguridad el sabor perfecto para tu celebración. Eliges 5 entre 12 sabores.</p>
+      <a class="btn wa" data-wa="Hola Cupcakes Garden, quiero pedir una cake tasting box." href="#"><svg aria-hidden="true"><use href="#wa-icon"/></svg>Pedir mi tasting box</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="bodas" class="alt">
-    <div class="wrap feature reverse">
-      <div class="text">
-        <p class="eyebrow">Bodas</p>
-        <h2>Tu pastel de bodas, a tu medida</h2>
-        <p>Diseñamos juntas el pastel de tu boda: sabores, estilo y tamaño según tus invitados. Agenda una conversación para empezar.</p>
-        <a class="btn wa" data-wa="Hola Jenny, quiero cotizar un pastel de bodas." href="#"><svg><use href="#wa-icon"/></svg>Cotizar pastel de bodas</a>
-      </div>
-      <div class="photo t3"><span>Galería de bodas</span></div>
+<section class="tint">
+  <div class="wrap feature reverse">
+    <div class="text">
+      <p class="eyebrow">Cupcakes clásicos</p>
+      <h2>Pick your color</h2>
+      <p>Elige el color del frosting y crea tu combinación. Packs de 2, 4, 6 o 12, en vainilla o chocolate, con relleno de dulce de leche, chocolate o fresa.</p>
+      <a class="btn solid" href="cupcakes.html#clasicos">Arma tus cupcakes</a>
     </div>
-  </section>
+    <div class="photo t2"><span>Cupcakes pick your color</span></div>
+  </div>
+</section>
 
-  <section id="eventos">
-    <div class="wrap feature">
-      <div class="photo t2"><span>Foto de eventos</span></div>
-      <div class="text">
-        <p class="eyebrow">Eventos y empresas</p>
-        <h2>Postres para tu evento o tu equipo</h2>
-        <p>Mesas de postres, cupcakes con tu logo y regalos corporativos. Cuéntanos la fecha y el número de personas.</p>
-        <a class="btn wa" data-wa="Hola Jenny, quiero cotizar postres para un evento." href="#"><svg><use href="#wa-icon"/></svg>Cotizar evento</a>
-      </div>
+<section class="band">
+  <div class="wrap grid cols-2">
+    <div>
+      <p class="eyebrow">Corporativo</p>
+      <h2>Detalles que representan a tu marca</h2>
+      <p>Regalos para clientes y colaboradores con empaque, colores y mensajes personalizados.</p>
+      <a class="btn solid" href="corporativo.html#cotizar">Solicitar cotización corporativa</a>
     </div>
-  </section>
+    <div>
+      <p class="eyebrow">Eventos</p>
+      <h2>Propuestas dulces para momentos que merecen ser recordados</h2>
+      <p>Bodas, cumpleaños, bautizos, graduaciones, lanzamientos y mesas de postres.</p>
+      <a class="btn solid" href="eventos.html#cotizar">Cuéntanos sobre tu evento</a>
+    </div>
+  </div>
+</section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="section-head"><div><p class="eyebrow">Así de fácil</p><h2>Cómo hacer tu pedido</h2></div></div>
-      <ol class="steps">
-        <li><h3>Elige tu pastel</h3><p>Mira las colecciones y escoge el que más te guste, o cuéntanos tu idea.</p></li>
-        <li><h3>Escríbenos por WhatsApp</h3><p>Toca el botón del producto y envíanos la fecha, el tamaño y los detalles.</p></li>
-        <li><h3>Confirma y disfruta</h3><p>Te enviamos el precio final y la forma de pago. Tu pedido queda reservado.</p></li>
-      </ol>
+<section>
+  <div class="wrap feature">
+    <div class="photo t4"><span>Nuestra historia</span></div>
+    <div class="text">
+      <p class="script">Desde 2013</p>
+      <h2>Creando momentos a través de la pastelería</h2>
+      <p>Cupcakes Garden nació con una pasión por la pastelería y por crear productos que acompañaran momentos importantes. Hoy seguimos creciendo sin perder lo que nos caracteriza: el buen gusto, la creatividad y la intención detrás de cada creación.</p>
+      <a class="btn" href="nosotros.html">Conoce nuestra historia</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="sobre-mi">
-    <div class="wrap about">
-      <div class="photo t4"><span>Foto de Jenny</span></div>
-      <div class="text">
-        <p class="eyebrow">Sobre mí</p>
-        <h2>Hola, soy Jenny</h2>
-        <p>Aquí irá la historia de Jenny: cómo empezó en la repostería, qué la inspira y qué hace especiales sus pasteles. Este texto es de ejemplo.</p>
-        <p>También podemos mencionar premios, años de experiencia o la ciudad donde trabaja.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="preguntas" class="alt">
-    <div class="wrap">
-      <div class="section-head"><div><p class="eyebrow">Ayuda</p><h2>Preguntas frecuentes</h2></div></div>
-      <div class="faq">
-        <details><summary>¿Con cuánta anticipación debo pedir?</summary><p>Respuesta de ejemplo: recomendamos pedir con al menos 3 días de anticipación, y con más tiempo para bodas.</p></details>
-        <details><summary>¿Hacen entregas a domicilio?</summary><p>Respuesta de ejemplo: sí, dentro de la ciudad. Escríbenos tu dirección para confirmar el costo.</p></details>
-        <details><summary>¿Cómo se paga?</summary><p>Respuesta de ejemplo: transferencia o efectivo. Al confirmar por WhatsApp te enviamos los datos.</p></details>
-        <details><summary>¿Tienen opciones sin gluten o sin lactosa?</summary><p>Respuesta de ejemplo: consúltanos por WhatsApp y te contamos qué opciones tenemos.</p></details>
-      </div>
-    </div>
-  </section>
 </main>
-
 <footer>
   <div class="wrap">
     <div>
-      <span class="brand"><b>Jenny Amaya</b></span>
-      <p>Repostería artesanal por encargo. Escríbenos por WhatsApp para hacer tu pedido.</p>
+      <img class="sello" src="img/sello.png" alt="Sello de Cupcakes Garden by Jenny Amaya" width="500" height="501">
+      <p class="tagline">Pastelería de diseño · Diseño. Sabor. Detalle.</p>
     </div>
     <div>
-      <h4>Tienda</h4>
+      <h4>Productos</h4>
       <ul>
-        <li><a href="#pasteles">Pasteles</a></li>
-        <li><a href="#regalos">Regalos</a></li>
-        <li><a href="#bodas">Bodas</a></li>
-        <li><a href="#eventos">Eventos y empresas</a></li>
+        <li><a href="pasteles.html">Pasteles</a></li>
+        <li><a href="galletas.html">Galletas</a></li>
+        <li><a href="cupcakes.html">Cupcakes</a></li>
+        <li><a href="postres.html">Postres</a></li>
+        <li><a href="corporativo.html">Corporativo</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
       </ul>
     </div>
     <div>
-      <h4>Contacto</h4>
+      <h4>Síguenos</h4>
       <ul>
-        <li><a data-wa="Hola Jenny" href="#">WhatsApp</a></li>
-        <li><a href="https://instagram.com/">Instagram (ejemplo)</a></li>
-        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li><a href="https://www.instagram.com/cupcakesgardenhn/">Instagram</a></li>
+        <li><a href="https://www.facebook.com/search/top?q=Cupcakes%20Garden">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@cupcakes.garden.h">TikTok</a></li>
+        <li><a data-wa="Hola Cupcakes Garden" href="#">WhatsApp</a></li>
       </ul>
     </div>
-    <div class="legal">© 2026 Jenny Amaya. Todos los derechos reservados.</div>
+    <div class="legal">
+      <span>© 2026 Cupcakes Garden. Tegucigalpa, Honduras.</span>
+      <span><a href="legal.html#terminos">Términos y condiciones</a> · <a href="legal.html#privacidad">Política de privacidad</a></span>
+    </div>
   </div>
 </footer>
-
-<a class="wa-float" data-wa="Hola Jenny, quiero hacer un pedido." href="#" aria-label="Escribir por WhatsApp"><svg><use href="#wa-icon"/></svg></a>
-
-<script>
-// Cambia este número por el WhatsApp real (código de país + número, sin espacios ni +)
-const WHATSAPP = "520000000000";
-
-// Productos de ejemplo. En la fase 2 vendrán de la tienda en línea.
-const PRODUCTS = [
-  { name: "Pastel de cumpleaños clásico", price: "Desde $ — (por definir)", tone: "t1" },
-  { name: "Caja de 12 macarons", price: "$ — (por definir)", tone: "t4" },
-  { name: "Caja de brownies", price: "$ — (por definir)", tone: "t3" },
-  { name: "Galletas gruesas de chocolate", price: "$ — (por definir)", tone: "t6" },
-  { name: "Docena de cupcakes", price: "$ — (por definir)", tone: "t5" },
-  { name: "Pastel infantil temático", price: "Desde $ — (por definir)", tone: "t2" },
-  { name: "Pastel para dos", price: "$ — (por definir)", tone: "t1" },
-  { name: "Pastel de revelación", price: "Desde $ — (por definir)", tone: "t4" }
-];
-
-const waLink = (text) => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
-
-document.getElementById("products").innerHTML = PRODUCTS.map((p) => `
-  <article class="product">
-    <div class="photo ${p.tone}"><span>Foto</span></div>
-    <h3>${p.name}</h3>
-    <p class="price">${p.price}</p>
-    <a class="btn wa" data-wa="Hola Jenny, quiero pedir: ${p.name}." href="#"><svg><use href="#wa-icon"/></svg>Pedir</a>
-  </article>`).join("");
-
-document.querySelectorAll("[data-wa]").forEach((a) => {
-  a.href = waLink(a.dataset.wa);
-  a.target = "_blank";
-  a.rel = "noopener";
-});
-</script>
+<a class="wa-float" data-wa="Hola Cupcakes Garden, quiero hacer un pedido." href="#" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa-icon"/></svg></a>
+<script src="js/sitio.js"></script>
 </body>
 </html>

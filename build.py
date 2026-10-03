@@ -266,7 +266,7 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
 
 <section>
   <div class="wrap feature">
-    {photo("Pastel de diseño", "t1")}
+    <img class="photo-img portrait" src="img/pastel-diseno-acuarela.jpg" alt="Pastel de diseño de cuatro pisos en tonos lila y blanco con flores de azúcar" width="800" height="1000">
     <div class="text">
       <p class="eyebrow">Pasteles de diseño</p>
       <h2>Un pastel único para tu celebración</h2>

@@ -330,7 +330,7 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
       <h2>Nuestra carta de sabores</h2>
       <p class="muted">Muy pronto publicaremos la carta completa, organizada en sabores convencionales, gourmet y de vanguardia. Mientras tanto, pregúntanos por WhatsApp.</p>
     </div>
-    {wa_btn("Preguntar por sabores", "Hola Cupcakes Garden, ¿qué sabores de pastel tienen?", "btn sage")}
+    {wa_btn("Preguntar por sabores", "Hola Cupcakes Garden, ¿qué sabores de pastel tienen?", "btn")}
   </div>
 </section>
 """)

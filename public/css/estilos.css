@@ -57,13 +57,14 @@ header.top .wrap { display: flex; align-items: center; justify-content: space-be
 .menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: .4rem; padding: .45rem .7rem; font: inherit; color: var(--fg); cursor: pointer; }
 
 /* Botones */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.35rem; border-radius: 999px; font: 400 .95rem var(--body); letter-spacing: .03em; text-decoration: none; border: 1.5px solid var(--green); color: var(--green); background: transparent; cursor: pointer; }
-.btn.solid { background: var(--green); color: var(--on-green); }
-.btn.sage { border-color: var(--sage); color: var(--fg); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.35rem; border-radius: 999px; font: 400 .95rem var(--body); letter-spacing: .03em; text-decoration: none; border: 1.5px solid var(--sage); color: #FFFFFF; background: var(--sage); cursor: pointer; }
+/* Botón secundario: sage #8B9070. Botón principal (.solid): verde Sablé */
+.btn:hover { filter: brightness(.94); }
+.btn.solid { background: var(--green); border-color: var(--green); color: var(--on-green); }
 .btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
 .btn.small { padding: .5rem 1rem; font-size: .88rem; }
 .btn svg { width: 1.1em; height: 1.1em; fill: currentColor; flex: none; }
-.menu .btn { padding: .5rem 1.1rem; font-size: .9rem; color: var(--on-green); }
+.menu .btn { padding: .5rem 1.1rem; font-size: .9rem; }
 .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
 
 /* Secciones */

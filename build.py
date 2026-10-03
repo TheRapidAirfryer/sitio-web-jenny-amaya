@@ -284,13 +284,13 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
     </div>
     <div class="grid two-on-phone cols-4 occasions">
       <div class="card"><img class="photo-img" src="img/pastel-beisbol.jpg" alt="Pastel de cumpleaños con tema de béisbol" width="800" height="1000" loading="lazy"><h3>Cumpleaños</h3></div>
-      <div class="card">{photo("Aniversarios", "t3")}<h3>Aniversarios</h3></div>
-      <div class="card">{photo("Graduaciones", "t2")}<h3>Graduaciones</h3></div>
-      <div class="card">{photo("Bautizos", "t4")}<h3>Bautizos</h3></div>
-      <div class="card">{photo("Baby showers", "t1")}<h3>Baby showers y revelaciones</h3></div>
-      <div class="card"><img class="photo-img" src="img/pastel-pato.jpg" alt="Pastel infantil con personaje de pato" width="800" height="1000" loading="lazy"><h3>Niños</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-flores.jpg" alt="Pastel blanco de dos pisos con flores rosadas" width="800" height="1000" loading="lazy"><h3>Aniversarios</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-galaxia.jpg" alt="Pastel temático de galaxia con personajes y esferas" width="800" height="1000" loading="lazy"><h3>Graduaciones</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-pato.jpg" alt="Pastel infantil con personaje de pato" width="800" height="1000" loading="lazy"><h3>Bautizos</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-oh-baby.jpg" alt="Pastel de baby shower con tema de viajes" width="800" height="1000" loading="lazy"><h3>Baby showers y revelaciones</h3></div>
+      <div class="card"><img class="photo-img" src="img/pastel-dinosaurios.jpg" alt="Pastel de dinosaurios en dos pisos" width="800" height="1000" loading="lazy"><h3>Niños</h3></div>
       <div class="card"><img class="photo-img" src="img/pastel-casita-bosque.jpg" alt="Pastel de casita en el bosque con musgo y hongos" width="800" height="1000" loading="lazy"><h3>Celebraciones especiales</h3></div>
-      <a class="card" href="eventos.html#cotizar">{photo("Bodas", "t4")}<h3>Bodas</h3><span class="more">Cotizar boda →</span></a>
+      <a class="card" href="eventos.html#cotizar"><img class="photo-img" src="img/pastel-boda-clasico.jpg" alt="Pastel de boda clásico de cinco pisos" width="800" height="1000" loading="lazy"><h3>Bodas</h3><span class="more">Cotizar boda →</span></a>
     </div>
     <div class="actions" style="margin-top:2rem">{wa_btn("Pedir pastel para mi ocasión", "Hola Cupcakes Garden, quiero un pastel para una ocasión especial.")}</div>
   </div>

@@ -192,6 +192,9 @@ footer a:hover { text-decoration: underline; }
   .feature.reverse .photo { order: -1; }
   footer .wrap { grid-template-columns: 1fr 1fr; }
   footer .wrap > :first-child { grid-column: 1 / -1; }
+  footer .wrap > :first-child { text-align: center; }
+  footer .sello { margin-inline: auto; }
+  footer .tagline { margin-inline: auto; }
 }
 @media (max-width: 560px) {
   section { padding-block: 3.2rem; }

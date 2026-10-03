@@ -212,3 +212,8 @@ footer a:hover { text-decoration: underline; }
   .brand img { height: 3rem; }
   .hero .photo { max-width: 18rem; }
 }
+
+/* Fotografías reales */
+.photo-img { width: 100%; height: auto; border-radius: .6rem; object-fit: cover; }
+.photo-img.portrait { aspect-ratio: 4 / 5; object-position: center top; }
+@media (max-width: 860px) { .photo-img.portrait { max-width: 26rem; margin-inline: auto; } }

@@ -606,7 +606,7 @@ page("nosotros.html", "Nosotros", "Cupcakes Garden: pastelería hondureña funda
 
 <section>
   <div class="wrap feature">
-    {photo("Jenny Amaya", "t4")}
+    <img class="photo-img portrait" src="img/jenny-amaya.jpg" alt="Jenny Amaya, fundadora de Cupcakes Garden" width="1200" height="1490">
     <div class="text">
       <p class="eyebrow">Nuestra historia</p>
       <p>Cupcakes Garden nació con una pasión por la pastelería y por crear productos que acompañaran momentos importantes. Con los años hemos evolucionado, ampliado nuestra propuesta y desarrollado nuevas líneas de productos, manteniendo nuestro compromiso con el sabor, el diseño y la atención al detalle.</p>

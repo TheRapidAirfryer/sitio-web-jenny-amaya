@@ -1,0 +1,9 @@
+{
+  "name": "sitio-web-jenny-amaya",
+  "private": true,
+  "description": "Sitio web de Cupcakes Garden by Jenny Amaya",
+  "scripts": {
+    "dev": "npx --yes serve@14 public -l 3000",
+    "start": "npx --yes serve@14 public -l 3000"
+  }
+}

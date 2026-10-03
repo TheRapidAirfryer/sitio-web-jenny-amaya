@@ -6,6 +6,14 @@ Estructura y textos según el brief del cliente; inspiración visual en thisisan
 - **Fase 1 (actual):** sitio estático de varias páginas. Pedidos por WhatsApp; los formularios de cotización de Eventos y Corporativo arman un mensaje de WhatsApp con las respuestas.
 - **Fase 2:** carrito y pagos en línea.
 
+## Ver el sitio en tu computadora
+
+```
+npm run dev
+```
+
+Luego abre http://localhost:3000. Necesita Node.js; no hace falta `npm install`.
+
 ## Archivos
 
 - `build.py`: genera todas las páginas `.html` dentro de `public/` (textos, menú y pie). Edita aquí y ejecuta `python3 build.py`.

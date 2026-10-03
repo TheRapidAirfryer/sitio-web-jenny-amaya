@@ -77,11 +77,11 @@ def header(current):
 
 FOOTER = """<footer>
   <div class="wrap">
-    <div>
+    <div class="foot-brand">
       <img class="sello" src="img/sello.png" alt="Sello de Cupcakes Garden by Jenny Amaya" width="500" height="501">
-      <p class="tagline">Pastelería de diseño · Diseño. Sabor. Detalle.</p>
+      <p class="tagline">Pastelería de diseño<span class="tag-sep"> · </span>Diseño. Sabor. Detalle.</p>
     </div>
-    <div>
+    <div class="col-prod">
       <h4>Productos</h4>
       <ul>
         <li><a href="productos.html">Todos los productos</a></li>
@@ -89,12 +89,18 @@ FOOTER = """<footer>
         <li><a href="galletas.html">Galletas</a></li>
         <li><a href="cupcakes.html">Cupcakes</a></li>
         <li><a href="postres.html">Postres</a></li>
+      </ul>
+    </div>
+    <div class="col-casa">
+      <h4>Cupcakes Garden</h4>
+      <ul>
         <li><a href="corporativo.html">Corporativo</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="desk-only"><a href="contacto.html">Contacto</a></li>
       </ul>
     </div>
-    <div>
+    <div class="col-social">
       <h4>Síguenos</h4>
       <ul>
         <li><a href="https://www.instagram.com/cupcakesgardenhn/">Instagram</a></li>

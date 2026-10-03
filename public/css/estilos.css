@@ -163,14 +163,17 @@ details p { color: var(--muted); margin-top: .6rem; }
 
 /* Pie */
 footer { background: var(--surface); color: var(--fg); border-top: 1px solid var(--line); padding-block: 3.5rem 6rem; }
-footer .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; }
+/* Columnas de ancho natural repartidas con el mismo espacio; los bordes coinciden con la línea legal */
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 2.5rem 3rem; }
+footer .foot-brand { display: grid; gap: 1rem; justify-items: start; }
+footer .tag-sep { display: block; height: 0; overflow: hidden; }
 footer .sello { width: 7rem; }
-footer .tagline { letter-spacing: .2em; text-transform: uppercase; font-size: .78rem; margin-top: 1rem; opacity: .8; }
+footer .tagline { letter-spacing: .2em; text-transform: uppercase; font-size: .74rem; line-height: 1.9; opacity: .8; margin: 0; }
 footer h4 { margin: 0 0 .7rem; font-weight: 400; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
 footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .35rem; }
 footer a { color: inherit; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
-.legal { grid-column: 1 / -1; border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding-top: 1.2rem; font-size: .82rem; opacity: .75; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
+.legal { flex-basis: 100%; border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding-top: 1.2rem; font-size: .82rem; opacity: .75; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
 
 .wa-float { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); z-index: 30; width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 6px 20px rgb(0 0 0 / .25); }
 .wa-float svg { width: 1.8rem; height: 1.8rem; fill: currentColor; }
@@ -190,11 +193,16 @@ footer a:hover { text-decoration: underline; }
   .hero .wrap, .feature, .quote, .contact { grid-template-columns: 1fr; gap: 2rem; }
   .quote .intro { position: static; }
   .feature.reverse .photo { order: -1; }
-  footer .wrap { grid-template-columns: 1fr 1fr; }
-  footer .wrap > :first-child { grid-column: 1 / -1; }
-  footer .wrap > :first-child { text-align: center; }
-  footer .sello { margin-inline: auto; }
-  footer .tagline { margin-inline: auto; }
+  /* Celular y tablet: logo centrado arriba, Productos a la izquierda y Síguenos a la derecha */
+  footer .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; }
+  footer .foot-brand { grid-column: 1 / -1; justify-items: center; text-align: center; margin-bottom: 2rem; }
+  footer .tag-sep { display: inline; height: auto; }
+  footer .col-prod { grid-column: 1; grid-row: 2; }
+  footer .col-casa { grid-column: 1; grid-row: 3; }
+  footer .col-casa h4, footer .desk-only { display: none; }
+  footer .col-casa ul { margin-top: .35rem; }
+  footer .col-social { grid-column: 2; grid-row: 2 / span 2; }
+  footer .legal { grid-column: 1 / -1; margin-top: 2rem; }
 }
 @media (max-width: 560px) {
   section { padding-block: 3.2rem; }

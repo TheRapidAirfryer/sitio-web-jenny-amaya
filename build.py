@@ -7,16 +7,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent / "public"
 
-NAV = [
-    ("index.html", "Inicio"),
+PRODUCTOS = [
     ("pasteles.html", "Pasteles"),
     ("galletas.html", "Galletas"),
     ("cupcakes.html", "Cupcakes"),
     ("postres.html", "Postres"),
-    ("corporativo.html", "Corporativo"),
-    ("eventos.html", "Eventos"),
-    ("nosotros.html", "Nosotros"),
-    ("contacto.html", "Contacto"),
+]
+
+# Menú principal: pocas categorías claras (brief, sección 14). Productos agrupa las cuatro líneas.
+NAV = [
+    ("productos.html", "Productos", PRODUCTOS),
+    ("corporativo.html", "Corporativo", None),
+    ("eventos.html", "Eventos", None),
+    ("nosotros.html", "Nosotros", None),
+    ("contacto.html", "Contacto", None),
 ]
 
 WA_ICON = '<svg aria-hidden="true"><use href="#wa-icon"/></svg>'
@@ -43,10 +47,18 @@ def chips(items):
 
 def header(current):
     current_attr = ' aria-current="page"'
-    links = "".join(
-        f'<li><a href="{href}"{current_attr if href == current else ""}>{label}</a></li>'
-        for href, label in NAV
-    )
+    items = []
+    for href, label, children in NAV:
+        active = href == current or any(c == current for c, _ in children or [])
+        attr = current_attr if active else ""
+        if children:
+            sub = "".join(
+                f'<li><a href="{c}"{current_attr if c == current else ""}>{l}</a></li>' for c, l in children
+            )
+            items.append(f'<li class="has-sub"><a href="{href}"{attr}>{label}</a><ul class="sub">{sub}</ul></li>')
+        else:
+            items.append(f'<li><a href="{href}"{attr}>{label}</a></li>')
+    links = "".join(items)
     return f"""<svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="wa-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.1-.2Z"/></symbol>
 </svg>
@@ -72,6 +84,7 @@ FOOTER = """<footer>
     <div>
       <h4>Productos</h4>
       <ul>
+        <li><a href="productos.html">Todos los productos</a></li>
         <li><a href="pasteles.html">Pasteles</a></li>
         <li><a href="galletas.html">Galletas</a></li>
         <li><a href="cupcakes.html">Cupcakes</a></li>
@@ -145,7 +158,7 @@ LINEAS = [
 ]
 cards = "".join(
     f'<a class="card" href="{href}">{photo(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
-    for href, name, text, tone in LINEAS
+    for href, name, text, tone in LINEAS[:4]
 )
 page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucigalpa para celebrar, regalar y compartir.", f"""
 <section class="hero">
@@ -155,7 +168,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
       <h1>Pastelería para celebrar, regalar y compartir.</h1>
       <p class="lead">Desde pasteles diseñados para momentos especiales hasta galletas, cupcakes y postres que combinan diseño, sabor y atención al detalle.</p>
       <div class="actions">
-        <a class="btn solid" href="#lineas">Ver productos</a>
+        <a class="btn solid" href="productos.html">Ver productos</a>
         <a class="btn" href="contacto.html#cotizar">Cotizar</a>
       </div>
     </div>
@@ -169,7 +182,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
       <p class="script">Nuestras líneas</p>
       <h2>Todo lo que hacemos</h2>
     </div>
-    <div class="grid">{cards}</div>
+    <div class="grid two-on-phone cols-4">{cards}</div>
   </div>
 </section>
 
@@ -224,6 +237,19 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
       <a class="btn" href="nosotros.html">Conoce nuestra historia</a>
     </div>
   </div>
+</section>
+""")
+
+
+# ---------- Productos ----------
+pcards = "".join(
+    f'<a class="card" href="{href}">{photo(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
+    for href, name, text, tone in LINEAS[:4]
+)
+page("productos.html", "Productos", "Pasteles, galletas, cupcakes y postres de Cupcakes Garden.", f"""
+{page_hero("Productos", "Pastelería de diseño", "Elige una línea para ver sus opciones y hacer tu pedido por WhatsApp.")}
+<section>
+  <div class="wrap grid two-on-phone cols-4">{pcards}</div>
 </section>
 """)
 

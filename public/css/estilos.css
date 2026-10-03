@@ -18,18 +18,7 @@
   --display: "Alice", Georgia, "Times New Roman", serif;
   --script: "Great Vibes", "Snell Roundhand", cursive;
   --body: "Alice", Georgia, "Times New Roman", serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #191B14; --surface: #22251B; --tint: #2A2E21; --fg: #EFE9DC; --muted: #B3B29C;
-    --green: #A9BA78; --deep: #8FA764; --sage: #A7AC8C; --gold: #D4B067; --rose: #E3A195;
-    --on-green: #191B14; --line: #363A2B; --wa: #39BE76; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #191B14; --surface: #22251B; --tint: #2A2E21; --fg: #EFE9DC; --muted: #B3B29C;
-  --green: #A9BA78; --deep: #8FA764; --sage: #A7AC8C; --gold: #D4B067; --rose: #E3A195;
-  --on-green: #191B14; --line: #363A2B; --wa: #39BE76; color-scheme: dark;
+  color-scheme: light; /* el sitio siempre se ve en blanco, aunque el equipo esté en modo oscuro */
 }
 
 * { box-sizing: border-box; }
@@ -51,7 +40,7 @@ p { margin: 0; max-width: 62ch; }
 .muted { color: var(--muted); }
 
 /* Aviso y menú */
-.notice { background: var(--deep); color: var(--bg); text-align: center; font-size: .82rem; letter-spacing: .08em; padding-block: .45rem; padding-inline: 1rem; }
+.notice { background: var(--tint); color: var(--muted); border-bottom: 1px solid var(--line); text-align: center; font-size: .82rem; letter-spacing: .08em; padding-block: .45rem; padding-inline: 1rem; }
 header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; padding-block: .55rem; }
 .brand img { height: 3.6rem; width: auto; }

@@ -5,7 +5,7 @@ Edita los textos aquí y vuelve a ejecutar; el encabezado y el pie se comparten 
 """
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent / "public"
 
 NAV = [
     ("index.html", "Inicio"),

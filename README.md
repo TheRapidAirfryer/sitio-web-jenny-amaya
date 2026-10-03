@@ -8,10 +8,10 @@ Estructura y textos según el brief del cliente; inspiración visual en thisisan
 
 ## Archivos
 
-- `build.py`: genera todas las páginas `.html` (textos, menú y pie). Edita aquí y ejecuta `python3 build.py`.
-- `css/estilos.css`: colores (paleta de transición marfil, verdes Sablé, dorado mate y logo rose gold) y diseño.
-- `js/sitio.js`: número de WhatsApp (`WHATSAPP`, vacío por ahora), armador de cupcakes y formularios.
-- `img/`: logo principal, logo "ja" y sello, recortados del PDF de la marca con fondo transparente.
+- `build.py`: genera todas las páginas `.html` dentro de `public/` (textos, menú y pie). Edita aquí y ejecuta `python3 build.py`.
+- `public/css/estilos.css`: colores (paleta de transición marfil, verdes Sablé, dorado mate y logo rose gold) y diseño.
+- `public/js/sitio.js`: número de WhatsApp (`WHATSAPP`, vacío por ahora), armador de cupcakes y formularios.
+- `public/img/`: logo principal, logo "ja" y sello, recortados del PDF de la marca con fondo transparente.
 
 ## Pendiente
 

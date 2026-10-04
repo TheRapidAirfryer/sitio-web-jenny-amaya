@@ -121,7 +121,9 @@ a.card:hover h3 { color: var(--rose); }
 .facts dd { margin: 0; }
 
 .band { background: var(--bg); border-block: 1px solid var(--line); }
-.band .grid > div { display: grid; gap: .8rem; justify-items: start; }
+/* Columna en flex: los botones no se estiran y quedan alineados abajo en ambas columnas */
+.band .grid > div { display: flex; flex-direction: column; gap: .8rem; align-items: flex-start; }
+.band .grid > div .btn { margin-top: auto; }
 .band p { color: var(--muted); }
 
 /* Armador de cupcakes */

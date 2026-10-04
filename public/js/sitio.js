@@ -77,7 +77,8 @@ document.querySelectorAll("form.form").forEach((form) => {
       form.reportValidity();
       return;
     }
-    const lines = [form.dataset.title];
+    // El título va entre asteriscos para que WhatsApp lo muestre en negrita
+    const lines = ["*" + form.dataset.title + "*", ""];
     form.querySelectorAll("input, select, textarea").forEach((field) => {
       const label = field.closest("label");
       if (!label || !field.value) return;

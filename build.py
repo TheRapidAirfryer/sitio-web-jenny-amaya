@@ -154,6 +154,19 @@ def page_hero(script, title, intro):
 
 
 # ---------- Inicio ----------
+# Foto de portada de cada línea (vacío = bloque de color mientras llega la foto)
+PORTADAS = {
+    "Pasteles": ("portada-pasteles.jpg", "Pastel de dos pisos azul con orquídeas blancas y detalles dorados"),
+}
+
+
+def line_cover(name, tone):
+    if name in PORTADAS:
+        src, alt = PORTADAS[name]
+        return f'<img class="photo-img" src="img/{src}" alt="{alt}" width="800" height="1000" loading="lazy">'
+    return photo(name, tone)
+
+
 LINEAS = [
     ("pasteles.html", "Pasteles", "De diseño, para cada ocasión, clásicos y personalizados. También nuestra cake tasting box.", "t1"),
     ("galletas.html", "Galletas", "Estilo New York, gourmand, americanas, linzer, alfajores, cottage y gluten free.", "t3"),
@@ -163,7 +176,7 @@ LINEAS = [
     ("eventos.html", "Eventos", "Mesas dulces, Coffee &amp; Bakery Experience y propuestas para tu celebración.", "t2"),
 ]
 cards = "".join(
-    f'<a class="card" href="{href}">{photo(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
+    f'<a class="card" href="{href}">{line_cover(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
     for href, name, text, tone in LINEAS[:4]
 )
 page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucigalpa para celebrar, regalar y compartir.", f"""
@@ -188,7 +201,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
       <p class="script">Nuestras líneas</p>
       <h2>Todo lo que hacemos</h2>
     </div>
-    <div class="grid two-on-phone cols-4">{cards}</div>
+    <div class="grid two-on-phone cols-4 occasions">{cards}</div>
   </div>
 </section>
 
@@ -249,13 +262,13 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
 
 # ---------- Productos ----------
 pcards = "".join(
-    f'<a class="card" href="{href}">{photo(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
+    f'<a class="card" href="{href}">{line_cover(name, tone)}<h3>{name}</h3><p>{text}</p><span class="more">Ver {name.lower()} →</span></a>'
     for href, name, text, tone in LINEAS[:4]
 )
 page("productos.html", "Productos", "Pasteles, galletas, cupcakes y postres de Cupcakes Garden.", f"""
 {page_hero("Productos", "Pastelería de diseño", "Elige una línea para ver sus opciones y hacer tu pedido por WhatsApp.")}
 <section>
-  <div class="wrap grid two-on-phone cols-4">{pcards}</div>
+  <div class="wrap grid two-on-phone cols-4 occasions">{pcards}</div>
 </section>
 """)
 

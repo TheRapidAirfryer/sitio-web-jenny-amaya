@@ -217,7 +217,7 @@ footer a:hover { text-decoration: underline; }
 .photo-img { width: 100%; height: auto; border-radius: .6rem; object-fit: cover; }
 .photo-img.portrait { aspect-ratio: 4 / 5; object-position: center top; }
 @media (max-width: 860px) { .photo-img.portrait { max-width: 26rem; margin-inline: auto; } }
-/* Ocasiones: todas las fotos del mismo tamaño (4:5) */
+/* Tarjetas con foto de pastel (ocasiones y líneas de producto): todas del mismo tamaño (4:5) */
 .occasions .photo, .occasions .photo-img { aspect-ratio: 4 / 5; }
 /* Hover sutil en las tarjetas de pasteles: la foto se eleva un poco y el título toma el tono rose gold */
 .occasions .card .photo-img, .occasions .card .photo { transition: transform .35s ease, box-shadow .35s ease; }

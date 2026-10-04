@@ -159,6 +159,7 @@ PORTADAS = {
     "Pasteles": ("portada-pasteles.jpg", "Pastel de dos pisos azul con orquídeas blancas y detalles dorados"),
     "Galletas": ("portada-galletas.jpg", "Galleta con chispas de chocolate partida a mano"),
     "Cupcakes": ("portada-cupcakes.jpg", "Cupcake de vainilla con frosting, caramelo, chocolate y nuez"),
+    "Postres": ("portada-postres.jpg", "Rebanada de pastel con capas de frutos rojos y frosting rosado"),
 }
 
 

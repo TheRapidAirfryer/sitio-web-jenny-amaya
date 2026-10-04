@@ -232,3 +232,17 @@ footer a:hover { text-decoration: underline; }
   .occasions .card .photo-img, .occasions .card .photo { transition: none; }
   .occasions .card:hover .photo-img, .occasions .card:hover .photo { transform: none; }
 }
+
+/* Nosotros: tres pilares centrados, con línea dorada bajo el título y separadores verticales */
+.pillars { gap: 0; }
+.pillars .card { text-align: center; justify-items: center; padding: .5rem 2.2rem; }
+.pillars .card + .card { border-left: 1px solid var(--line); }
+.pillars .eyebrow::after { content: ""; display: block; width: 2.5rem; height: 1px; background: var(--gold); margin: 1rem auto .4rem; }
+.pillars .card p:not(.eyebrow) { max-width: 30ch; }
+@media (max-width: 860px) {
+  .grid.pillars { --cols: 1; }
+  .pillars .card { padding: 2rem 0; }
+  .pillars .card + .card { border-left: 0; border-top: 1px solid var(--line); }
+  .pillars .card:first-child { padding-top: 0; }
+  .pillars .card:last-child { padding-bottom: 0; }
+}

@@ -157,6 +157,8 @@ def page_hero(script, title, intro):
 # Foto de portada de cada línea (vacío = bloque de color mientras llega la foto)
 PORTADAS = {
     "Pasteles": ("portada-pasteles.jpg", "Pastel de dos pisos azul con orquídeas blancas y detalles dorados"),
+    "Galletas": ("portada-galletas.jpg", "Galleta con chispas de chocolate partida a mano"),
+    "Cupcakes": ("portada-cupcakes.jpg", "Cupcake de vainilla con frosting, caramelo, chocolate y nuez"),
 }
 
 

@@ -432,7 +432,7 @@ page("cupcakes.html", "Cupcakes", "Cupcakes clásicos pick your color, gourmet y
 
 <section id="clasicos">
   <div class="wrap feature">
-    {photo("Cupcakes clásicos", "t2")}
+    {pic("cupcakes-clasicos.jpg", "Cuatro choux con crema rosa y de chocolate y corazones", 1000, 800)}
     <form class="builder boxed" data-product="Cupcakes clásicos pick your color">
       <div>
         <p class="eyebrow">Cupcakes clásicos</p>
@@ -461,21 +461,21 @@ page("cupcakes.html", "Cupcakes", "Cupcakes clásicos pick your color, gourmet y
       <p class="summary" aria-live="polite"></p>
       <button class="btn wa" type="submit">{WA_ICON}Pedir por WhatsApp</button>
     </form>
-    {photo("Cupcakes gourmet", "t1")}
+    {pic("cupcakes-gourmet.jpg", "Choux partido relleno de crema y frutos rojos", 1000, 800)}
   </div>
 </section>
 
 <section>
   <div class="wrap grid cols-2">
     <div class="card boxed">
-      {photo("Cupcakes personalizados", "t3")}
+      {pic("cupcakes-personalizados.jpg", "Mini bundt de chocolate con cereza")}
       <p class="eyebrow">Cupcakes de diseño personalizados</p>
       <h3>Para tu temática</h3>
       <p>Para cumpleaños, celebraciones, baby showers, revelaciones y temáticas especiales. Requieren cotización.</p>
       <a class="btn small" href="eventos.html#cotizar">Cotizar</a>
     </div>
     <div class="card boxed">
-      {photo("Cupcakes corporativos", "t4")}
+      {pic("cupcakes-corporativos.jpg", "Mini bundt con glaseado blanco y corazones amarillos")}
       <p class="eyebrow">Cupcakes corporativos</p>
       <h3>Con la imagen de tu empresa</h3>
       <p>Ideales para lanzamientos, reuniones y regalos a clientes.</p>

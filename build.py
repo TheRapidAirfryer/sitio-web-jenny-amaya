@@ -346,7 +346,7 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
       {wa_btn("Pedir pastel clásico", "Hola Cupcakes Garden, quiero pedir un pastel clásico.", "btn wa small")}
     </div>
     <div class="card boxed">
-      {photo("Pasteles de merengue", "t4")}
+      {pic("pastel-merengue.jpg", "Pastel blanco con chocolate derretido, frutos rojos y rosas")}
       <p class="eyebrow">Tradicionales de merengue</p>
       <h3>Recetas de toda la vida</h3>
       <p>Una colección inspirada en recetas tradicionales, de esas que nos han acompañado durante generaciones. Con cobertura de merengue.</p>

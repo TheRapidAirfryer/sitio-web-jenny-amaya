@@ -53,7 +53,9 @@ FOTOS = {
     "Alfajores": ("alfajores.jpg", "Alfajores bañados en chocolate y merengue"),
     "Galletas de colección": ("galletas-coleccion.jpg", "Caja de galletas linzer con mermelada"),
     "Gluten free": ("galleta-gluten-free.jpg", "Torre de galletas de pistacho"),
-    "Tiramisú collection": ("tiramisu.jpg", "Frascos de postre en capas de varios sabores"),
+    "Tiramisú collection": ("tiramisu.jpg", "Tiramisú espolvoreado con cacao y lazo de Cupcakes Garden"),
+    "Cheesecake collection": ("cheesecake.jpg", "Rebanada de cheesecake con salsa de frutos rojos"),
+    "Tres leches collection": ("tres-leches.jpg", "Tres leches decorado con melocotón y cerezas"),
 }
 
 

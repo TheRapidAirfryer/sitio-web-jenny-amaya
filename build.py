@@ -41,6 +41,27 @@ def photo(label, tone="t1"):
     return f'<div class="photo {tone}"><span>{label}</span></div>'
 
 
+def pic(src, alt, w=800, h=800):
+    return f'<img class="photo-img" src="img/{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy">'
+
+
+# Fotos reales por nombre de producto; lo que no esté aquí queda como marcador
+FOTOS = {
+    "Cookies estilo New York": ("galleta-new-york.jpg", "Galleta con chispas de chocolate mojada en leche"),
+    "Cookies gourmand": ("galleta-gourmand.jpg", "Galleta gourmand cubierta de chocolate"),
+    "Cookies americanas": ("galleta-americana.jpg", "Torre de galletas de macadamia"),
+    "Alfajores": ("alfajores.jpg", "Alfajores bañados en chocolate y merengue"),
+    "Galletas de colección": ("galletas-coleccion.jpg", "Caja de galletas linzer con mermelada"),
+    "Tiramisú collection": ("tiramisu.jpg", "Frascos de postre en capas de varios sabores"),
+}
+
+
+def product_photo(name, tone):
+    if name in FOTOS:
+        return pic(*FOTOS[name])
+    return photo(name, tone)
+
+
 def chips(items):
     return '<ul class="chips">' + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
 
@@ -194,7 +215,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
         <a class="btn" href="contacto.html#cotizar">Cotizar</a>
       </div>
     </div>
-    {photo("Fotografía principal", "t1")}
+    {pic("inicio-principal.jpg", "Pastel rosado con cerezas sobre base de madera", 800, 1000)}
   </div>
 </section>
 
@@ -210,7 +231,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
 
 <section>
   <div class="wrap feature">
-    {photo("Cake tasting box", "t3")}
+    {pic("tasting-box.jpg", "Cake tasting box con porciones de varios sabores", 1000, 800)}
     <div class="text">
       <p class="eyebrow">Cake tasting box</p>
       <h2>Descubre nuestros sabores antes de elegir tu pastel</h2>
@@ -251,7 +272,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
 
 <section>
   <div class="wrap feature">
-    {photo("Nuestra historia", "t4")}
+    {pic("nuestra-historia.jpg", "Cuatro pasteles pequeños en tonos pastel", 1000, 800)}
     <div class="text">
       <p class="script">Desde 2013</p>
       <h2>Creando momentos a través de la pastelería</h2>
@@ -315,7 +336,7 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
 <section>
   <div class="wrap grid cols-2">
     <div class="card boxed">
-      {photo("Pasteles clásicos", "t2")}
+      {pic("pastel-clasico.jpg", "Pastel rosado con pétalos blancos y macarons")}
       <p class="eyebrow">Pasteles clásicos</p>
       <h3>Bonitos y fáciles de elegir</h3>
       <p>Diseños sencillos y elegantes para quienes buscan una opción bonita sin requerir un concepto completamente personalizado.</p>
@@ -341,7 +362,7 @@ page("pasteles.html", "Pasteles", "Pasteles de diseño, para ocasiones especiale
       <dl class="facts"><div><dt>Porciones</dt><dd>5</dd></div><div><dt>Sabores para elegir</dt><dd>12</dd></div></dl>
       {wa_btn("Pedir mi tasting box", "Hola Cupcakes Garden, quiero pedir una cake tasting box.")}
     </div>
-    {photo("Cake tasting box", "t3")}
+    {pic("tasting-box-sabores.jpg", "Caja de degustación de pastel con sabores etiquetados", 1000, 800)}
   </div>
 </section>
 
@@ -368,7 +389,7 @@ GALLETAS = [
     ("Gluten free", "Opciones sin gluten.", "t4"),
 ]
 gcards = "".join(
-    f'<div class="card">{photo(n, t)}<h3>{n}</h3><p>{d}</p>{wa_btn("Pedir", "Hola Cupcakes Garden, quiero pedir: " + n + ".", "btn wa small")}</div>'
+    f'<div class="card">{product_photo(n, t)}<h3>{n}</h3><p>{d}</p>{wa_btn("Pedir", "Hola Cupcakes Garden, quiero pedir: " + n + ".", "btn wa small")}</div>'
     for n, d, t in GALLETAS
 )
 page("galletas.html", "Galletas", "Galletas estilo New York, gourmand, americanas, alfajores, galletas de colección y decoradas.", f"""
@@ -466,7 +487,7 @@ page("cupcakes.html", "Cupcakes", "Cupcakes clásicos pick your color, gourmet y
 SPOONING = [("Tiramisú collection", "t4"), ("Cheesecake collection", "t1"), ("Tres leches collection", "t3")]
 INDIVIDUALES = ["Cheesecakes clásicos", "Cheesecakes vascos", "Tres leches", "Tiramisú", "Pavlovas", "Tartas", "Loaf cakes"]
 scards = "".join(
-    f'<div class="card">{photo(n, t)}<h3>{n}</h3>{wa_btn("Pedir", "Hola Cupcakes Garden, quiero pedir: " + n + ".", "btn wa small")}</div>'
+    f'<div class="card">{product_photo(n, t)}<h3>{n}</h3>{wa_btn("Pedir", "Hola Cupcakes Garden, quiero pedir: " + n + ".", "btn wa small")}</div>'
     for n, t in SPOONING
 )
 page("postres.html", "Postres", "Spooning collection y postres individuales: tiramisú, cheesecakes, tres leches, pavlovas, tartas y loaf cakes.", f"""
@@ -482,7 +503,7 @@ page("postres.html", "Postres", "Spooning collection y postres individuales: tir
 </section>
 <section class="alt">
   <div class="wrap feature">
-    {photo("Postres individuales", "t2")}
+    {pic("postres-individuales.jpg", "Mini bundt cakes de chocolate y vainilla", 1000, 800)}
     <div class="text">
       <p class="eyebrow">Postres individuales</p>
       <h2>Tu antojo, en su porción</h2>
@@ -555,8 +576,8 @@ page("corporativo.html", "Corporativo", "Regalos y repostería personalizada par
       <p class="muted">Dos opciones que puedes pedir hoy, sin cotización.</p>
     </div>
     <div class="grid cols-2">
-      <div class="card boxed">{photo("Caja corporativa de galletas", "t3")}<h3>Caja de galletas</h3><p>Una selección de nuestras galletas en caja de regalo.</p>{wa_btn("Pedir cajas", "Hola Cupcakes Garden, quiero pedir cajas corporativas de galletas.", "btn wa small")}</div>
-      <div class="card boxed">{photo("Kit corporativo", "t2")}<h3>Kit corporativo</h3><p>Un kit de postres variados listo para entregar.</p>{wa_btn("Pedir kits", "Hola Cupcakes Garden, quiero pedir kits corporativos.", "btn wa small")}</div>
+      <div class="card boxed">{pic("corp-caja-galletas.jpg", "Caja de alfajores para regalo")}<h3>Caja de galletas</h3><p>Una selección de nuestras galletas en caja de regalo.</p>{wa_btn("Pedir cajas", "Hola Cupcakes Garden, quiero pedir cajas corporativas de galletas.", "btn wa small")}</div>
+      <div class="card boxed">{pic("corp-kit.jpg", "Caja de rebanadas de loaf cake con tarjeta de agradecimiento")}<h3>Kit corporativo</h3><p>Un kit de postres variados listo para entregar.</p>{wa_btn("Pedir kits", "Hola Cupcakes Garden, quiero pedir kits corporativos.", "btn wa small")}</div>
     </div>
   </div>
 </section>
@@ -599,7 +620,7 @@ page("eventos.html", "Eventos", "Propuestas dulces para bodas, cumpleaños, baut
 <section class="alt">
   <div class="wrap grid cols-2">
     <div class="card boxed">{photo("Mesa dulce", "t1")}<p class="eyebrow">Mesas dulces</p><h3>Una mesa a la medida de tu evento</h3><p>Combinamos pasteles, cupcakes, galletas y postres con la temática de tu celebración.</p></div>
-    <div class="card boxed">{photo("Coffee & Bakery Experience", "t3")}<p class="eyebrow">Coffee &amp; Bakery Experience</p><h3>Nuestro carrito de café y repostería</h3><p>Una experiencia de café y bakery para que tus invitados disfruten en el momento.</p></div>
+    <div class="card boxed">{pic("eventos-coffee.jpg", "Rebanada de carrot cake con café latte")}<p class="eyebrow">Coffee &amp; Bakery Experience</p><h3>Nuestro carrito de café y repostería</h3><p>Una experiencia de café y bakery para que tus invitados disfruten en el momento.</p></div>
   </div>
 </section>
 
@@ -682,8 +703,8 @@ page("contacto.html", "Contacto", "Contacto de Cupcakes Garden en Tegucigalpa: W
       <h2>¿Qué quieres cotizar?</h2>
     </div>
     <div class="grid cols-2">
-      <a class="card boxed" href="eventos.html#cotizar">{photo("Eventos", "t1")}<h3>Eventos</h3><p>Bodas, cumpleaños, bautizos, graduaciones, mesas de postres y más.</p><span class="more">Cotizar evento →</span></a>
-      <a class="card boxed" href="corporativo.html#cotizar">{photo("Corporativo", "t2")}<h3>Corporativo</h3><p>Regalos y detalles personalizados para tu empresa.</p><span class="more">Cotizar corporativo →</span></a>
+      <a class="card boxed" href="eventos.html#cotizar">{pic("contacto-eventos.jpg", "Pastel de boda blanco con flores de azúcar")}<h3>Eventos</h3><p>Bodas, cumpleaños, bautizos, graduaciones, mesas de postres y más.</p><span class="more">Cotizar evento →</span></a>
+      <a class="card boxed" href="corporativo.html#cotizar">{pic("contacto-corporativo.jpg", "Caja de regalo con mini bundt cake y lazo rojo")}<h3>Corporativo</h3><p>Regalos y detalles personalizados para tu empresa.</p><span class="more">Cotizar corporativo →</span></a>
     </div>
   </div>
 </section>

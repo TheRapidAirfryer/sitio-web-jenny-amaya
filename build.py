@@ -252,7 +252,7 @@ page("index.html", "Inicio", "Cupcakes Garden: pastelería de diseño en Tegucig
       <p>Elige el color del frosting y crea tu combinación. Packs de 2, 4, 6 o 12, en vainilla o chocolate, con relleno de dulce de leche, chocolate o fresa.</p>
       <a class="btn solid" href="cupcakes.html#clasicos">Arma tus cupcakes</a>
     </div>
-    {photo("Cupcakes pick your color", "t2")}
+    {pic("cupcakes-clasicos.jpg", "Cuatro choux con crema rosa y de chocolate y corazones", 1000, 800)}
   </div>
 </section>
 

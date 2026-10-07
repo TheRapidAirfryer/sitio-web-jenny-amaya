@@ -52,6 +52,7 @@ FOTOS = {
     "Cookies americanas": ("galleta-americana.jpg", "Torre de galletas de macadamia"),
     "Alfajores": ("alfajores.jpg", "Alfajores bañados en chocolate y merengue"),
     "Galletas de colección": ("galletas-coleccion.jpg", "Caja de galletas linzer con mermelada"),
+    "Gluten free": ("galleta-gluten-free.jpg", "Torre de galletas de naranja con rodajas de naranja"),
     "Tiramisú collection": ("tiramisu.jpg", "Frascos de postre en capas de varios sabores"),
 }
 

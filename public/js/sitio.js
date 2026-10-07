@@ -2,7 +2,7 @@
 
 // Número de WhatsApp: código de país + número, sin espacios ni "+". Ejemplo: "50400000000".
 // Mientras esté vacío, los botones muestran un aviso en lugar de abrir WhatsApp.
-const WHATSAPP = "50499144064"; // PRUEBAS: número de cabsan. Cambiar por el de Cupcakes Garden antes de publicar.
+const WHATSAPP = "50487320215"; // WhatsApp de Cupcakes Garden
 
 const waLink = (text) => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
 

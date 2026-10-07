@@ -622,7 +622,7 @@ page("eventos.html", "Eventos", "Propuestas dulces para bodas, cumpleaños, baut
 
 <section class="alt">
   <div class="wrap grid cols-2">
-    <div class="card boxed">{photo("Mesa dulce", "t1")}<p class="eyebrow">Mesas dulces</p><h3>Una mesa a la medida de tu evento</h3><p>Combinamos pasteles, cupcakes, galletas y postres con la temática de tu celebración.</p></div>
+    <div class="card boxed">{pic("mesa-dulce.jpg", "Bento cakes decorados con corazones en sus cajitas")}<p class="eyebrow">Mesas dulces</p><h3>Una mesa a la medida de tu evento</h3><p>Combinamos pasteles, cupcakes, galletas y postres con la temática de tu celebración.</p></div>
     <div class="card boxed">{pic("eventos-coffee.jpg", "Rebanada de carrot cake con café latte")}<p class="eyebrow">Coffee &amp; Bakery Experience</p><h3>Nuestro carrito de café y repostería</h3><p>Una experiencia de café y bakery para que tus invitados disfruten en el momento.</p></div>
   </div>
 </section>
